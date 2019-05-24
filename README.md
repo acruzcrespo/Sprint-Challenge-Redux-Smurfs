@@ -23,18 +23,31 @@ In this challenge, you are to build the Smurfs village once again, only this tim
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+  - Actions: Actions are basically event listeners waiting for an event to occur, then can issue which type of event (and payload, if applicable) to the reducers. This can change is there is middleware between the actions/reducers.
+
+  Reducers: The reducer is a function that holds a switch stm and can be described as the "setState" of redux. This is where your Javascript logic goes. The reducer is taking the information retrieved from the action and then copying your state, CRUD, and then updating the store to you new state copy.
+
+  The Store: The redux store is basically a javascript object that represents everything that can change in the app. This store contains the application state for our app.
+
+
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+  - Application state is state that can be accessed throughout the entire application and component state is state that can only be accessed through that component and children components with the info passed down as props. If you have data needed throughout the entire site, using Application state would be smart. If you're managing UI data like a form submission, you may want to use component state mgmt for that info.
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+  - Redux thunk is a node package that allows you to make API calls from the action creators by making the flow of the data in your app asynchronous.
 
 ## Project Set Up
 
 Follow these steps to set up your project:
 
-- [ ] `fork & clone` this repository.
-- [ ] `cd` into the forked copy of this repository.
-- [ ] **RUN** `yarn` to retrieve all `server-side` the dependencies.
-- [ ] **RUN** `yarn start` or `npm start` to get your API up and running on `http://localhost:3333`. This is the **URL** you're going to need to use within your React app in order to make AJAX requests for data.
-- [ ] After your API is up and running, you can open chrome and type in `http://localhost:3333/smurfs`. You should see an empty Array `[]` returned to you. This is an array that your **API** will be using to store our Smurf Data.
+- [X] `fork & clone` this repository.
+- [X] `cd` into the forked copy of this repository.
+- [X] **RUN** `yarn` to retrieve all `server-side` the dependencies.
+- [X] **RUN** `yarn start` or `npm start` to get your API up and running on `http://localhost:3333`. This is the **URL** you're going to need to use within your React app in order to make AJAX requests for data.
+- [X] After your API is up and running, you can open chrome and type in `http://localhost:3333/smurfs`. You should see an empty Array `[]` returned to you. This is an array that your **API** will be using to store our Smurf Data.
 - [ ] **LOOK** at your `smurfs` directory and notice it's just a plain ol' React App that we've built using `create-react-app`.
 - [ ] **Open** `src/index.js` to make sure that your app is ready to roll with the proper middleware.
 - [ ] **cd** into `smurfs` and run `yarn` to retrieve the client side dependencies.
