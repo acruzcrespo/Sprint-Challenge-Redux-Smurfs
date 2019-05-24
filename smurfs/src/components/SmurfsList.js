@@ -26,7 +26,10 @@ class SmurfsList extends React.Component{
                 <SmurfCard 
                 key={smurf.id} 
                 smurf={smurf} 
-                deleteSmurf={this.deleteSmurf}
+                name={smurf.name}
+                age={smurf.age}
+                height={smurf.height}
+                deleteSmurf={this.props.deleteSmurf}
                 />
                 )
             } )}</ul>

@@ -44,7 +44,7 @@ export const DELETE_SMURF_FAILED = 'DELETE_SMURF_FAILED';
 export const deleteSmurf = id => dispatch => {
     dispatch({ type: DELETE_SMURF_START })
     axios
-    .delete(`http://localhost:3333/smurfs/${id}`)
+    .delete('http://localhost:3333/smurfs/', id)
     .then(res => {
       console.log("promise: ", id, res)
       dispatch({ type: DELETE_SMURF_SUCCESSFUL, payload: id })

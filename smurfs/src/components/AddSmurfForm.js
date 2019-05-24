@@ -8,13 +8,19 @@ class AddSmurfForm extends React.Component{
         this.state = {
             name: '',
             age: '',
-            height: ''
+            height: '',
+            id: ''
         }
     }
 
     handleClick = e => {
         e.preventDefault();
-        if(!this.state.name || !this.state.age || !this.state.height ) return;
+        //this fragment does input validation
+        if(!this.state.name || !this.state.age || !this.state.height ) {
+            console.log('missing info...');
+            return;
+        }
+        //actually adds the info (i.e. the smurf)
         this.props.addSmurf(this.state);
         this.setState({ 
             name: '',
@@ -61,5 +67,7 @@ class AddSmurfForm extends React.Component{
 const mapStateToProps = state => {
     return {}
 }
+
+
 
 export default connect(mapStateToProps, { addSmurf } )(AddSmurfForm);
