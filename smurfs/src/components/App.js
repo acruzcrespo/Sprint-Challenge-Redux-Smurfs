@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 
 import SmurfsList from './SmurfsList';
 import AddSmurfForm from './AddSmurfForm';
@@ -19,7 +19,7 @@ class App extends Component {
           <NavLink exact to="/">Add Smurf</NavLink>
           <NavLink exact to="/">Smurfs</NavLink>
         </nav>
-        <h1 className="title">ReduxstaSmurfs</h1>
+        <h1 className="title">Redux Smurf's List</h1>
         <Route exact path="/" component={AddSmurfForm} />
         <Route path="/smurfs" component={SmurfsList} />
       </div>
