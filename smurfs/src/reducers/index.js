@@ -49,3 +49,36 @@ function reducer(state = initialState, action){
         fetchingSmurfs: false,
         smurfs: action.payload
       }
+      case ADD_SMURF_START:
+      return {
+        ...state,
+        addingSmurf: true,
+        error: ''
+      }
+      case ADD_SMURF_SUCCESSFUL:
+        return {
+          ...state,
+          addingSmurf: false, 
+          error: '',
+          smurfs: action.payload
+        }
+        case DELETE_SMURF_START:
+          return {
+            ...state,
+            deletingSmurf: true,
+            error: ''
+          }
+        case DELETE_SMURF_SUCCESSFUL: 
+          return {
+            ...state,
+            deletingSmurf: false, 
+            smurfs: state.smurfs.filter( smurf => {
+              return smurf.id !== action.payload
+            } )
+          }
+    default:
+      return state;
+  }
+}
+
+export default reducer;
